@@ -47,6 +47,8 @@ INSTALLED_APPS = [
     'rest_framework',
     'allauth',
     'allauth.account',
+
+    'projects',
 ]
 
 MIDDLEWARE = [

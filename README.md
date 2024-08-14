@@ -12,7 +12,9 @@
 
 Focus Forge is a web application designed to help plan and organize on the users terms. Think of it like a virtual corkboard/whiteboard. You can move items around and organize them in whatever way works the best for you. The website should have a simple design for accessibility and to keep it from being overwhelming. All colors are kept desaturated, but with enough contrast to help visually impaired, colorblind people and at the same time those with sensitivity to bright and saturated colors.
 
-All in all, this project is designed to help with focus without overwhelming the user
+All in all, this project is designed to help with focus without overwhelming the user.
+
+To make things as easy as possible the user doesn't have to create an account, but they have to save the url in order to be able to return to their project later
 
 ## Technologies
 

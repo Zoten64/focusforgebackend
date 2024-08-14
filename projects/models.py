@@ -1,4 +1,5 @@
 from django.db import models
+from django.contrib.auth.models import User
 import uuid
 
 # Create your models here.
@@ -9,8 +10,12 @@ TASK_STATUS = (('not_started', 'Not Started'),
 
 
 class Project(models.Model):
+    owner = models.ForeignKey(
+        User, on_delete=models.CASCADE, blank=True, null=True)
     title = models.CharField(max_length=100)
     description = models.TextField(max_length=500)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
     unique_id = models.UUIDField(
         default=uuid.uuid4, editable=False, unique=True)
 
@@ -42,6 +47,7 @@ class Note(models.Model):
 
     def __str__(self):
         return f'{self.title} : {self.project.title}'
+
 
 class Text(models.Model):
     content = models.TextField(max_length=500)

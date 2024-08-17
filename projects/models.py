@@ -17,7 +17,8 @@ class Project(models.Model):
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
     unique_id = models.UUIDField(
-        default=uuid.uuid4, editable=False, unique=True)
+        default=uuid.uuid4, editable=False, unique=True, primary_key=True)
+    password = models.CharField(max_length=100)
 
     def __str__(self):
         return self.title

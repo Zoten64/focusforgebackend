@@ -7,3 +7,12 @@ from .models import *
 class ProjectList(generics.ListCreateAPIView):
     queryset = Project.objects.all()
     serializer_class = ProjectSerializer
+    def perform_create(self, serializer):
+        try:
+            serializer.save(owner=self.request.user)
+        except:
+            serializer.save()
+
+class ProjectDetail(generics.RetrieveUpdateDestroyAPIView):
+    queryset = Project.objects.all()
+    serializer_class = ProjectSerializer
